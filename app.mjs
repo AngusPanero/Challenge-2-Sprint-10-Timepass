@@ -1,11 +1,10 @@
 import express from "express";
+import indexRouter from "./routes/index.mjs"
+import endrouteRouter from "./routes/endroute.mjs"
 const app = express();
 
-/* 
-TENGO QUE IM0ORTAR INDEX.MJS Y ENDROUTE.MJS
-app.get("/", (req, res) => {
-    res.send(`El Peluca Sapeeeee`)
-}) */
+app.use(indexRouter);
+app.use(endrouteRouter);
 
 app.use((req, res) => {
     res.status(404).send(`<h1>Página no Encontrada - 404</h1>`)
