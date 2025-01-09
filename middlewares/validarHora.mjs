@@ -1,7 +1,7 @@
 import horaMiddleware from "./horaMiddleware.mjs"
 
-const validarHora = (req, res, next) => {
-    if ((res.locals.hora >= 12) && (res.locals.hora <= 23)) {
+const validarHora = (req, res, horaMiddleware, next) => {
+    if ((horas >= 12) && (horas <= 23)) {
         next();
     } else{
         res.locals.mensaje = "Aún No Son Las 12 de la Mañana";
